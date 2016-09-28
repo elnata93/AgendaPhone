@@ -56,7 +56,6 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return retorno > 0;
@@ -80,7 +79,6 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return retorno;
@@ -124,7 +122,6 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return dt.Rows.Count > 0;
