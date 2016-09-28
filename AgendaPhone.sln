@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaPhone", "AgendaPhone\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{112A663E-CA0C-4818-93F5-F53C94BA8671}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL2\BLL.csproj", "{F2791982-B41E-4ED1-9705-BAE8BCD3DFA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{AF8AFA83-AA35-4DDB-8D03-3C21B124A8C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{112A663E-CA0C-4818-93F5-F53C94BA8671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{112A663E-CA0C-4818-93F5-F53C94BA8671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{112A663E-CA0C-4818-93F5-F53C94BA8671}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2791982-B41E-4ED1-9705-BAE8BCD3DFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2791982-B41E-4ED1-9705-BAE8BCD3DFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2791982-B41E-4ED1-9705-BAE8BCD3DFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2791982-B41E-4ED1-9705-BAE8BCD3DFA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8AFA83-AA35-4DDB-8D03-3C21B124A8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8AFA83-AA35-4DDB-8D03-3C21B124A8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8AFA83-AA35-4DDB-8D03-3C21B124A8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8AFA83-AA35-4DDB-8D03-3C21B124A8C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

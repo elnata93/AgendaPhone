@@ -171,12 +171,11 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL2\BLL.csproj">
-      <Project>{f2791982-b41e-4ed1-9705-bae8bcd3dfa6}</Project>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{af8afa83-aa35-4ddb-8d03-3c21b124a8c8}</Project>
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -21,7 +21,7 @@ namespace BLL
             this.personaId = 0;
             this.nombre = "";
             this.sexo = 0;
-            telefono = new List<PersonasTelefonos>();
+            this.telefono = new List<PersonasTelefonos>();
         }
 
         public Personas(int personaId, string nombre, int sexo)
@@ -31,9 +31,10 @@ namespace BLL
             this.sexo = sexo;
         }
 
-        public void AgregarTelefono(int personaId, string tipoTelefono, string telefono)
+        public void AgregarTelefono( string tipoTelefono, string telefono)
         {
-            //telefono.Add(new PersonasTelefonos(personaId, tipoTelefono, telefono));
+            this.telefono.Add(new PersonasTelefonos(tipoTelefono, telefono));
+            
         }
 
         public override bool Insertar()
@@ -43,7 +44,7 @@ namespace BLL
             try
             {
 
-                identity = conexion.ObtenerValor(String.Format("Insert int Personas(Nombre,Sexo) values('{0}',{1}) select @@Identity", this.nombre, this.sexo));
+                identity = conexion.ObtenerValor(String.Format("Insert int Personas(Nombres,Sexo) values('{0}',{1}) select @@Identity", this.nombre, this.sexo));
 
                 int.TryParse(identity.ToString(), out retorno);
 
@@ -55,7 +56,6 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return retorno > 0;
@@ -67,7 +67,7 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("update Personas set Nombre='{0}',Sexo={1} where PersonaId={3}", this.nombre, this.sexo, this.personaId));
+                retorno = conexion.Ejecutar(String.Format("update Personas set Nombres='{0}',Sexo={1} where PersonaId={3}", this.nombre, this.sexo, this.personaId));
                 if (retorno)
                 {
                     conexion.Ejecutar(String.Format("delete from PersonasTelefonos where PersonaId={0}", this.personaId));
@@ -79,7 +79,6 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return retorno;
@@ -110,20 +109,19 @@ namespace BLL
                 if (dt.Rows.Count > 0)
                 {
                     this.personaId = (int)dt.Rows[0]["PersonaId"];
-                    this.nombre = dt.Rows[0]["Nombre"].ToString();
+                    this.nombre = dt.Rows[0]["Nombres"].ToString();
                     this.sexo = (int)dt.Rows[0]["Sexo"];
 
                     data = conexion.ObtenerDatos(string.Format("select * from PersonaTelefono where PersonaId='{0}'", this.personaId));
                     foreach (var item in dt.Rows)
                     {
-                        AgregarTelefono((int)dt.Rows[0]["PersonaId"], dt.Rows[0]["TipoTelefono"].ToString(), dt.Rows[0]["Telefono"].ToString());
+                        this.AgregarTelefono( dt.Rows[0]["TipoTelefono"].ToString(), dt.Rows[0]["Telefono"].ToString());
                     }
                 }
 
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return dt.Rows.Count > 0;
