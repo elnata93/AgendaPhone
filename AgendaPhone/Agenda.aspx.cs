@@ -4,14 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using BLL;
 
 namespace AgendaPhone
 {
     public partial class Agenda : System.Web.UI.Page
     {
-
         Personas persona = new Personas();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -68,7 +66,7 @@ namespace AgendaPhone
             }
         }
 
-        protected void GuardarButton_Click1(object sender, EventArgs e)
+        protected void GuardarButton_Click(object sender, EventArgs e)
         {
             if (TelefonoGridView.Rows.Count == 0 || NombreTextBox.Text.Length == 0 || MasculinoRadioButton.Checked == true || FemeninoRadioButton.Checked == true || TipoTelefonoDropDownList.Text.Length == 0 || TelefonoTextBox.Text.Length == 0)
             {
@@ -106,12 +104,12 @@ namespace AgendaPhone
                         Limpiar();
                     }
                 }
-            }   
+            }
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            if(IdTextBox.Text.Length == 0)
+            if (IdTextBox.Text.Length == 0)
             {
                 Response.Write("<script>alert('Introduzca un ID', 'Alerta', 'Warning')</script>");
             }
